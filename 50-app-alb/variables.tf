@@ -14,12 +14,13 @@ variable "common_tags" {
   }
 }
 
-variable "rds_tags" {
+variable "app_alb_tags" {
   default = {
-    component = "mysql"
+    Component = "app-alb"
   }
 }
 
+
 variable "zone_name" {
-    default = "snigo.space"
+  default = "snigo.space"
 }

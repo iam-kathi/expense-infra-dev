@@ -61,3 +61,35 @@ module "db" {
     },
   ]
 }
+
+module "records" {
+  source = "terraform-aws-modules/route53/aws"
+
+  name    = var.zone_name
+
+  records = {
+     mysql = {
+      name    = "mysql-${var.environment}"
+      type    = "CNAME"
+      ttl     = 1
+      records = [
+        module.db.db_instance_address
+      ]
+      allow_overwrite = true
+    }
+  }
+
+}
+
+
+
+
+
+
+#  records = {
+#     mysql = {
+#       name    = "mysql"
+#       type    = "A"
+#       ttl     = 1
+#       records = [module.mysql.private_ip]
+#     }
