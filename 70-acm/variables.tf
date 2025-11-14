@@ -14,12 +14,10 @@ variable "common_tags" {
     }
 }
 
-variable "backend_tags" {
-    default = {
-        component = "backend"
-    }
-}
-
 variable "zone_name" {
   default = "snigo.space"
+}
+
+variable "zone_id" {
+    default = "Z01257693SN2WQOK2KCNY"
 }

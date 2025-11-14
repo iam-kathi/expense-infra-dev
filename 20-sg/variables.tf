@@ -50,4 +50,10 @@ variable "app_alb_sg_tags" {
     }
 }
 
+variable "web_alb_sg_tags" {
+    default = {
+        Component = "web-alb"
+    }
+}
+
 
